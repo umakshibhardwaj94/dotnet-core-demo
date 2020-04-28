@@ -25,6 +25,34 @@
             Its an entry Point for the application.
     
     When Main() Method configures ASP.NET Core and starts it and at that point it becomes an ASP.NET core web application.
+    
+    InProcess Hosting delivers significantly higher request throughput than OutProcess hosting.
+Inprocess hosting use w3wp process to host app on IIS server.
+
+In/OutofProcess hosting: 
+>>2 Web Servers - Internal and External Web Server.
+>>The internal web server is Kestrel
+>>External can be IIS,Nginx or Apache.
+
+KESTREL:
+>>Cross- Server Web Server for ASP.Net core.
+>>Kestrel can be used,by itself as an edge server.
+>>The Process used to host the app is dotnet.exe.
+
+Internet <--Http-->{Kestrel[dotnet.exe(Application)]}
+
+a).Kesrel can be used as the internet facing web server.
+b).Kestrel cab be used in combination with a reverse proxy.
+
+
+
+
+
+
+
+    
+    
+    
   
             
   
