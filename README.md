@@ -44,6 +44,42 @@ Internet <--Http-->{Kestrel[dotnet.exe(Application)]}
 a).Kesrel can be used as the internet facing web server.
 b).Kestrel cab be used in combination with a reverse proxy.
 
+Configuration in asp.net:
+>>Files(appsettings.json,appsettings.{Environment}.json)
+>>User Secrets
+>>Environment variables
+>>Command Line arguments 
+
+NOTE: If user will write the configuration setting using CLI then it would be on priority and will override already written config settings.
+
+Middleware in ASP.NET Core:
+>>Process Request and Response pipeline.
+		------------------------------------->
+		---[Logging]--[StaticFiles]--[MVC]
+		<------------------------------------
+>>May simply pass the request to next middleware
+>>may process and then pass the request to next Middleware
+>>May handle the Request and short-circuit the pipeline.
+>>May process the outgoing Response.
+>>Middlewares are executed in the order they are added.
+
+Terminal Middleware:
+A middleware that doesnot call the next middleware in pipeline. So it handles the request and send reverse response so do not get the chance to execute next middleware.
+
+Static Files:
+>>By default, asp.net core is unable to serve static files like html,images etc.
+>>Default directory for static files is wwwroot
+>>To serve static files, use UseStaticFiles() middleware,if required.
+>>To serve default files,use UseDefaultFiles() middleware, if required.
+>>UseDefaultFiles() must be registered before UseStaticFiles().
+
+Developer Exception Page:
+>>To enable plug in UseDeveloperExceptionPage middleware in the pipeline.
+>>Must be lugged in the pipeline as early as possible.
+>>Contains stack trace,Query String,Cookies and Headers.
+>>For customizing, use DeveloperExceptionPageOptions object.
+
+
 
 
 
