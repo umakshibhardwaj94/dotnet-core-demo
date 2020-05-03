@@ -79,7 +79,57 @@ Developer Exception Page:
 >>Contains stack trace,Query String,Cookies and Headers.
 >>For customizing, use DeveloperExceptionPageOptions object.
 
+Development Environments
 
+[Development]   [Staging]   [Production]
+
+>>ASPNETCORE_ENVIRONMENT variable sets the Runtime Environment in launchsettings.json file.
+>>Hosting Environment Default value is : Production
+>>On dev machine we sets the value in launchsettings.json
+>>On Staging or Production machine we set in the operating system.
+>>Use IHostingEnvironment service to access the runtime env.
+>>In addition to standard env(Development,Staging,production), 
+	custom env(UAT,QA etc) are also supported.
+
+What is MVC?
+MVC is an architectural design pattern for implementing User Interface Layer of an application
+>>Model: set of classes that represent data + the logic to manage that data.
+>>View : contains the display logic to present the model data
+provided to it by the Controller
+>>Controller : Hnadles the http request,work with the model, and selects a view to render that model.
+
+Setup MVC in ASP.NET Core
+
+>>Add the MVC Services to the Dependency Injection Container.
+>>Add MVC middleware to the Request Pipeline.
+
+ASP.NET Core AddMvc vs AddMvcCore:
+
+>>AddMvcCore() method only adds the core MVC services
+>>AddMvc() method adds all the required MVC services.
+>>AddMvc() method calls AddMvcCore() method internally.
+
+Model in ASP.NET Core MVC
+>>Model is set of classes that represent Data+Manage Data.
+
+Dependency Injection In Asp.Net Core:
+
+>>To Register with Dependency Injection Container
+	*AddSingleton():instance create only once within whole application.
+	*AddTransient() :instance created each time when requested
+	*AddScoped() :instance created once per request within the scope.
+>>Benefits of DI
+	*Loosely Coupled
+	*Easy Unit Testing.
+
+Controller in ASP.NET in MVC
+
+>>Handles the incoming http request
+>>Builds the model AND
+>>Returns the Model data to the caller if we are building 
+an API OR.
+>>Select a View and pass the model data to the view.
+>>The View then generates the required HTML to present the data
 
 
 
