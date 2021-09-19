@@ -1,0 +1,108 @@
+Task that CreateDefaultBinder() performs,
+>Setting up the web server.
+>Loading the host and application configuration from various configuration sources and
+>Configuring logging
+
+An asp.net core application can be hoisted
+>InProcess i.e. use IIS hosting.
+>OutProcess
+
+With Out of Process hosting:
+>2 Web servers= internal and External Web server
+>The internal web server is Kestrel(Cross-platform web server for asp.net core. Can be used ,by itself as an edge server, use dotnet.exe).
+>the external web server can be IIS , Nginx or Apache
+
+View:
+
+>>A view file has .cshtml extension.
+>>A view is an HTML yemplate with embedded Razor markup.
+>>Contains logic display Model data.
+
+Customized View:
+>>View() or View(object model): 
+	Looks for a view file with the same name as the action method.
+>>View(string viewName):
+	*Looks for a view file with your own custom name.
+	*You can specify a view name or a view file path.
+	*View file path can be absolute or relative.
+	*With absolute path .cshtml extension must be specified.
+	*With relative path do not specify the file extension .cshtml
+>>View(string viewName, object model)
+	
+Passing Data to View from Controller:
+	There are different ways of passing:
+*ViewBag:
+	>Dictionary of weakly typed objects
+	>Use string key to store and retrieve data
+	>Dynamically resolved at runtime
+	>No compile -time type checking and Intellisens
+*ViewData
+*Strongly Typed View
+
+ViewBag v/s ViewData
+>ViewBag is a wrapper around ViewData.
+>Creates lossely typed view
+>ViewData uses string keys to store and retrieve data
+>ViewBag used dynamic properties to store and retrieve data
+>Resolved dynamically at runtime.
+>No compile-time type checking and intellisense
+>Preferred approach to pass data from a controller to a view is by 
+using a Strongly Typed view.
+
+Strongly Typed view:
+>Specify model type in the view using @model directive
+>To access the model object properties we use @model.
+>Provides complile-time type checking and intellisense.
+
+ViewModel:
+We creates "View Model" when a Model objevt does not contain all the data a view needs.
+
+List View:
+CREATE new view and pass model as Ienumerable<Namespace.Models.Employee>
+
+LayoutView:
+>Consistent look and behaivour for all the views in a web application.
+>Similar to master page in ASP.Net Web Forms
+>File on the file system with .cshtml extension
+>Default name is _layout.cshtml
+>Usually placed in Views/Shared folder.
+>An application can have multiple layout views.
+
+Sections in Layout page:
+>A section in a Layout View provides a way to organize where certain page elements should be placed
+>A section can be optional or mandatory
+>A section in a Layout view is rendered at the location where Rendersection() method is called
+
+_ViewStart.cshtml:
+>Code in ViewStart is executed before the code in an individual view.
+>Move the common code such as setting the layout property to ViewStart
+>ViewStart reduces code redundancy and improves maintainability
+>ViewStart file is hierarchical.
+
+_ViewImports.cshtml:
+>_ViewImports file is placed in the View folder.
+>Used to include the common namespaces.
+>To include the common namespaces use @using directive
+>Other supported directives
+	>>@addTagHelper
+	>>removeTagHelper
+	>>tagHelperPrefix
+	>>@model
+	>>inherits
+	>>inject
+>_ViewImports file is hierarchical.
+
+Routing:
+When a request comes ffrom the browser to the application then Controller handles the request,
+and response to user action.
+ 
+1.Convential Routing: use default convention like homecontroller and action index.
+2.Attribute Routing:
+
+
+
+
+
+
+
+

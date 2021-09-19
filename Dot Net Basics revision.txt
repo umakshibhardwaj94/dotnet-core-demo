@@ -1,0 +1,193 @@
+Array:Strongly Data Type.
+	-Same type of Collection.
+Disadvan:
+	After initialization,we cannot change the length/size of array.
+
+Static/Instance methods:
+Instance method in which we need to create the instance to initialise the method.
+Static methods are those which have static keyword and do not need to initialise.
+
+Method parameters:
+	out:When we return one value then we use return type for the method but in case if we want multiple outputs then in that case we use out parameter.
+
+	params: We use output parameter arrays then in such case we use params keyword .
+
+Inheritence:
+	-Cannot inherit two classes, but only interface.
+	-Child class is specialised of base class(like if we create the instance of child class then we inherit parent into child then base class constructor will be called).
+	-Base class are automatically instanciated before derived classes.
+	-Parent class contructor executes before child class constructor.
+
+Method Hiding:
+Use of new keyword to hide a base class member.You will get a compiler warning if you miss the new keyword.
+
+Different ways to involve a hidden base class member from derived class
+1.Use base keyword
+2.Cast child type to parent type and involve the hidden member.
+((Employee)PTE).PrintFullName();
+3.ParentClass PC=new Childclass();
+	PC.HiddenMethod();
+
+
+SOA(Service Oriented Architecture):
+-Loosely coupled,reusable software components which encapsulates different functionalities which are distributed and programatically accessed.
+-Message oriented architecture based on XML.
+
+The  Most important SOA concepts:
+Services
+Self-describing interfaces with coarse granulation
+Exchange of messages.
+Support for Synchronous and Asynchronous communication
+Loose coupling
+Service Registration
+Quality of Service
+Composition of Services into Business Process.
+
+Collections:
+
+1.ArrayList: Ordered List with index.In case,one of the index value get removed then they resizes automatically.
+It also allows dynamic memory allocation,adding,searching and sorting items in list.
+
+2.HashTable:
+It uses a key to access the elements in the collection.
+ Each item in the hash table has a key/value pair.
+
+3.SortedList:It uses a key as well as an index to access the items in a list.
+
+4.Stack:It represents a last-in, first out collection of object.
+add an item in the list,called as Pushing.
+remove Item called as Popping.
+
+5.Queue:It represents a first-in, first out collection of object.
+
+Generics:
+
+Serialisation:
+It is basically to break down the objects into packets(bytes) to trasmit over the network.
+
+Exception Handling Abuse:
+Exceptions are unforeseen errors that can occur immediately when the program is running.
+For example: When the application is executing the query and database connection get lost. These types are scenarios are handled by this.
+
+Enums:
+Enums are strongly typed constants.
+If the program uses the integral numbers,consider replacing them with enums.Otherwise the program become less Readable,Maintainable.
+
+Types and Types Member:
+Class, structs,enums,interfaces,delegates are called types 
+fields,properties,constructor,methodsetc.that rae normally reside in a type are called type members.
+
+Type members can have all the access modifiers, where as types can have only 2 (internal, public) of the 5 access modifiers.
+
+Access Modifiers:
+Private-only available in containing type
+Public-all over accessible.
+Protected-within containing types and any class that derives from containing class.
+Internal-Anywhere within the containing assembly(i.e.,executables,dll).
+Prrotected Internal-Anywhere within the containing assembly, and from within a derived class in any another assembly.
+
+Attributes:
+Allows you to add declarative information to your programs.This information can then be queried at runtime using reflection.
+
+Few predefined attributes within the .NET framework:
+Obselete:Marks types and type members outdated.
+WebMethod : To expose a method as an XML webservice methods.
+Serializable:indicates that the class can be serialized.
+
+Reflection:
+Reflection is the ability of inspecting an assemblies' metadata at runtime.It is used to find all types in an assembly and/or dynamically invoke methods in an assembly.
+(Simply, when you dont have idea about the class or assembly like what it is containing to fetch runtime then we use reflection).
+
+eg.drag n drop a button on winforms or an asp.net application.The properties window uses reflection to show all the properties of Button class.
+
+Enables you to use code that is not available at compile time.
+
+Difference in Convert.Tostring() & tostring():
+When we use Convert.Tostring(), then it handles the null value.
+eg., Customer cust=null;(sometimes not get initialised then value passes as null).
+here,value will pass as empty.
+& when we use Tostring() then in case of null value ,it will through NULL Reference exception.
+
+Difference between System.String(Immutable-everything scattered) and SystemBuilder(Mutuable:concatnate):
+As StringBuilder objects are mutable,they offer better performance than string objects of type System.string,when heavy string manipulation is involved.
+
+Partial Classes:
+Partial classes allows us to split a class into 2 or more files. All these parts are then combined into a single class, when the application is compiled. The partial keyword can also be used to split a struct or an interface over two or more files.
+
+Advantages:
+Visual studio uses partial classes to separate.automatically generated system.code from the developer'code.
+-Classes can have only Internal and Public access modifiers.
+-Partial methods are private bydefault.
+-Partial Methods contains two parts-
+i)The definition(only method signature)
+ii)The implementation
+These may be in separate parts of partial class or can be in same.
+
+-If implementation is not provided then compiler removes the signature and all calls to the method.
+-Compile time error, to include declaration and implementation at the same time for a partial method.
+-A partial method return type must be void.Including any other return type is a compile time error.
+-Signature of the partial method declaration,must match with the signature of the implementation.
+-A partial method must be declared within a partial class or partial struct.A non partial class or struct cannot include  partial methods.
+-A partial method can be implemented only once.Trying to implement a partial method more than once,raises a complile time error.
+
+Indexers:
+eg,public IndividualSecurity this[int individualId]
+here,[individualId] used to find index of table.
+
+Dictionary:
+Contains key value pair.
+
+i).Use of TryGetValue() with dictionary=>when we are not sure about the key then use this method
+ii).Count()=>to find total counts present in the dictionary.
+iii).Remove()=>when we want to remove all the values.
+iv).Clear()=>need to remove selective.
+
+List Collection:
+List class can be used to create a collection of any type.
+e.g.,we can create a list of integers,strtings and even complex types.
+-Object stored can be accessed by index.
+-Unlike arrays, list can grow in size automatically.
+-This class also provides methods to search,sort, and manipulate lists.
+-List classes are strongly typed.
+
+GenericList:
+AddRange()-to add the range like till what number we can add new item.
+AddIndex()- if user need to index of item
+Remove()- to remove item.
+
+Sorting of List:
+Use of Sort() method with list can arrange the array.
+Use of Reverse() method will reverse the items in list.
+
+Sorting a List of Complex Types:
+To sort a list of complex types without LINQ,the complex type has to implement IComparable interface and provide implementation for CompareTo() method.
+
+CompareTo() returns an int value.
+
+Sorting a list of complex types using Comparison delegate:
+
+ThreadStart Delegate:
+if you want to pass some data with Thread function then that thread will execute that function.
+ParameterizedThreadStart delegate : when u need to pass the parameter along with threadstart.
+
+Passing Data to Thread Function:
+To pass data to the Thread function in a type safe manner,encapsulate the thread function and the data it needs in a helper class and the use the ThreadStart delegate
+to execute the Thread Function.
+
+Retrieving Data from Thread Function using callback method:
+Main thread retrieves the target number from the user.
+Main thread creates a child thread and pass the target number to the child thread.
+
+Thread.Join & Thread.Alive :
+Thread.Join= It blocks the current thread and makes it wait until thread on which Join method is involved completes.
+
+Join is particularly useful when we need to wait and collect the result from a thread execution or if we need to do some clean-up after the thread has completed.
+IsAlive returns Boolean.True if the thread is still executing otherwise false.
+
+Protecting Shared REsources:
+What happens if shared resources are not protected from concurrent accesses in multithreaded program?
+The output or behaivour of the program can become inconsistent if the shared resource are not protected from concurrent access in multithreaded program.
+
+Anonymous methods in c#:
+Anonymous method is a method without a name.Introduced in C#2.0,they provide us a way of creating delegate instances without having to write a separate method.
+
